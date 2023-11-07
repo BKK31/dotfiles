@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Copy colors from pywal to required places
+cp ~/.cache/wal/color-hyprland.conf ~/.config/hypr/myColors.conf
+cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/myColors.css

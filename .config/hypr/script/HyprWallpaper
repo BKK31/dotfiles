@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#Wallpaper Directory
+wallpaperdir="$HOME/wallpaper"
+
+# Select a random file
+randompic=$(find "$wallpaperdir" -type f \( -name "*.jpg" -o -name "*.png" \) | shuf -n 1)
+
+#Hyprpaper setting
+echo "preload = $randompic" > "$HOME/.config/hypr/hyprpaper.conf"
+echo "wallpaper = VGA-1, $randompic" >> "$HOME/.config/hypr/hyprpaper.conf"
+
+# Using pywal to generate color scheme
+wal -i $randompic
