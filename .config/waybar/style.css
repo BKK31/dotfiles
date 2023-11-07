@@ -1,0 +1,274 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+/*
+Arc-Dark Color Scheme
+*/
+@import url("myColors.css");
+
+@keyframes blink-warning {
+    70% {
+        color: white;
+    }
+
+    to {
+        color: white;
+        background-color: @background;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+        color: white;
+    }
+
+    to {
+        color: white;
+        background-color: red;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    /* margin: 1px; */
+    padding: 0;
+    /* color: #66ACED; */
+}
+
+
+/* The whole bar */
+window#waybar {
+    /* color: #dfdfdf; */
+    /* background-color: rgba(0,0,0,0.8); */
+    /* background-color: rgba(8,0,37,0.85); */
+    background-color: rgba(0, 0, 0, 0);
+    /* font-family: JetBrains Mono Nerd Font; */
+    font-family: Intel One Mono Nerd Font;
+    font-size: 14px;
+    /* border-radius: 22px; */
+}
+
+/* Every modules */
+#battery,
+#clock,
+#backlight,
+#cpu,
+#custom-keyboard-layout,
+#memory,
+#mode,
+#custom-weather,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#idle_inhibitor,
+#window,
+#custom-power,
+#custom-launcher,
+#workspaces,
+#custom-media,
+#bluetooth,
+#custom-swaync,
+#custom-PBPbattery {
+    padding: 0.25rem 0.75rem;
+    margin: 0px 0px;
+    background-color: @background;
+    border-radius: 20px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Modules styles
+ * -------------------------------------------------------------------------- */
+
+#clock {
+    /* color: #ff4499; */
+    color: @color3;
+}
+
+#custom-weather {
+    color: @color3;
+}
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning {
+    color: orange;
+}
+
+#battery.critical {
+    color: red;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#cpu {
+    color: #f7768e;
+}
+
+#cpu.warning {
+    color: orange;
+}
+
+#cpu.critical {
+    color: red;
+}
+
+#memory {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: #f7768e;
+}
+
+#memory.warning {
+    color: orange;
+}
+
+#memory.critical {
+    color: red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#mode {
+    /* background: @highlight; */
+    /* background: #dfdfdf; */
+    border-bottom: 3px transparent;
+    color: #ff4499;
+    margin-left: 5px;
+    padding: 7px;
+}
+
+#network {
+    color: @color12;
+}
+
+#network.disconnected {
+    color: @color12;
+}
+
+#pulseaudio {
+    color: @color12;
+    border-left: 0px;
+    border-right: 0px;
+    margin-right: 0;
+    border-radius: 20px 0 0 20px;
+}
+
+/* #pulseaudio.muted { */
+/*     color: #ff4499; */
+/* } */
+/**/
+#pulseaudio.microphone {
+    border-left: 0px;
+    border-right: 0px;
+    margin-left: 0;
+    padding-left: 0;
+    border-radius: 0 20px 20px 0;
+}
+
+/* #pulseaudio.microphone.muted { */
+/*     color: #ff4499; */
+/* } */
+
+
+#temperature.critical {
+    color: red;
+}
+
+#window {
+    font-weight: bold;
+    color: @color1;
+}
+
+#custom-media {
+    color: @color12;
+}
+
+#workspaces {
+    font-size: 12px;
+    color: @color4;
+    background-color: @background;
+    border-radius: 20px;
+}
+
+#workspaces button {
+    color: @color7;
+    border-bottom: 3px solid transparent;
+    margin-bottom: 0px;
+}
+
+#workspaces button.active {
+    /* border-bottom: 1px solid @color15; */
+    color: @color6;
+    /* margin-bottom: 1px; */
+    padding-left: 0;
+    font-size: 18px;
+}
+
+#workspaces button.urgent {
+    /* border-color: @color9; */
+    color: @color9;
+    font-size: 18px;
+}
+
+#workspaces button.default {
+    color: @color9;
+    font-size: 18px;
+}
+
+#custom-power {
+    font-size: 18px;
+    padding-right: 1rem;
+    color: @color15;
+}
+
+#custom-launcher {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-right: 10px;
+    color: @color15;
+}
+
+#backlight.icon {
+    padding-right: 1px;
+    font-size: 13px;
+}
+
+#bluetooth {
+    color: @color12;
+}
+
+#custom-swaync {
+    color: @color12;
+}
