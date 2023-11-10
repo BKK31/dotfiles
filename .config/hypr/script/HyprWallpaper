@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Killing any running instance of waybar and hyprpaper
+pkill waybar
+pkill hyprpaper
+
 #Wallpaper Directory
 wallpaperdir="$HOME/wallpaper"
 
@@ -12,3 +16,11 @@ echo "wallpaper = VGA-1, $randompic" >> "$HOME/.config/hypr/hyprpaper.conf"
 
 # Using pywal to generate color scheme
 wal -i $randompic
+
+# Copy colors from pywal to required places
+cp ~/.cache/wal/color-hyprland.conf ~/.config/hypr/myColors.conf
+cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/myColors.css
+
+# Running or starting process
+hyprpaper&
+waybar&
