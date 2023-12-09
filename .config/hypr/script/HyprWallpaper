@@ -1,16 +1,13 @@
 #!/bin/bash
 
-# Killing any running instance of waybar and hyprpaper
-pkill waybar
-pkill hyprpaper
 
-#Wallpaper Directory
+# Wallpaper Directory
 wallpaperdir="$HOME/wallpaper"
 
 # Select a random file
 randompic=$(find "$wallpaperdir" -type f \( -name "*.jpg" -o -name "*.png" \) | shuf -n 1)
 
-#Hyprpaper setting
+# Hyprpaper setting
 echo "preload = $randompic" > "$HOME/.config/hypr/hyprpaper.conf"
 echo "wallpaper = VGA-1, $randompic" >> "$HOME/.config/hypr/hyprpaper.conf"
 
@@ -20,7 +17,12 @@ wal -i $randompic
 # Copy colors from pywal to required places
 cp ~/.cache/wal/color-hyprland.conf ~/.config/hypr/myColors.conf
 cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/myColors.css
+cp ~/.config/waybar/myColors.css ~/.config/swaync/myColors.css
 
-# Running or starting process
+# Killing and starting process
+pkill hyprpaper
 hyprpaper&
+pkill waybar
 waybar&
+pkill swaync
+swaync&
