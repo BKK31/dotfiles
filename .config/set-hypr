@@ -16,7 +16,7 @@ for SOFTWR in hyprland-git hyprpaper kitty microsoft-edge-stable-bin neofetch nw
         fi
     fi
 done
-
+ cd ~/dotfiles/.config
     for DIR in hypr kitty mako swaylock waybar wlogout wofi 
     do 
         DIRPATH=~/.config/$DIR
