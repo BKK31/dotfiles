@@ -17,14 +17,14 @@ for SOFTWR in hyprland-git hyprpaper kitty microsoft-edge-stable-bin neofetch nw
     fi
 done
 
-    for DIR in hypr kitty mako swaylock waybar wlogout wofi 
-    do 
-        DIRPATH=~/.config/$DIR
-        if [ -d "$DIRPATH" ]; then 
-            echo -e "Config for $DIR located, backing up."
-            mv $DIRPATH $DIRPATH-back
-            echo -e "Backed up $DIR to $DIRPATH-back."
-        fi
-        echo -e "Copying $DIR config to $DIRPATH."  
-        cp -R $DIR ~/.config/
-    done
+for DIR in hypr kitty mako swaylock waybar wlogout wofi 
+do 
+    DIRPATH=~/.config/$DIR
+    if [ -d "$DIRPATH" ]; then 
+        echo -e "Config for $DIR located, backing up."
+        mv $DIRPATH $DIRPATH-back
+        echo -e "Backed up $DIR to $DIRPATH-back."
+    fi
+    echo -e "Copying $DIR config to $DIRPATH."  
+    cp -R $DIR ~/.config
+done
