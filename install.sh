@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo pacman -S --needed ./packages.txt
+sudo pacman -S --needed > ./packages.txt
