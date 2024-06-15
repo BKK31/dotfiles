@@ -1,22 +1,4 @@
 #!/bin/bash
-
-for SOFTWR in hyprland-git hyprpaper kitty microsoft-edge-stable-bin neofetch nwg-look openssh thunar pantheon-calculator gnome-disk-utility emote ffmpeg fish sddm-git gnome-shell-pomodoro polkit-gnome python-pywal qbittorrent qpdfview sanskrit-fonts scrcpy spotify stremio swaync ttf-ms-fonts tldr libreoffice-fresh waybar xdg-desktop-portal-hyprland
-    do
-      #First lets see if the package is there
-      if yay -Qs $SOFTWR > /dev/null ; then
-        echo -e "$SOFTWR is already installed."
-      else
-        echo -e "Now installing $SOFTWR ..."
-        yay -S --noconfirm $SOFTWR
-        if yay -Qs $SOFTWR > /dev/null ; then
-            echo -e "$SOFTWR was installed."
-        else
-            echo -e "$SOFTWR install had failed, please check the install.log"
-            exit
-        fi
-    fi
-done
-
 for DIR in hypr kitty mako swaylock waybar wlogout wofi 
 do 
     DIRPATH=~/.config/$DIR
