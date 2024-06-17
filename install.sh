@@ -1,4 +1,8 @@
 #!/bin/bash
 
-# sh chaotic-aur.sh
-sudo pacman -S --needed > ./packages.txt
+arch=$(cat arch_packages.txt)
+aur=$(cat aur_packages.txt)
+
+sudo pacman -S --needed --noconfirm $arch
+
+yay -S --needed --noconfirm $aur
