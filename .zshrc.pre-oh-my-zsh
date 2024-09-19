@@ -1,0 +1,4 @@
+
+. "$HOME/.grit/bin/env"
+alias ls='ls -l --color=auto'
+alias ll='ls -la --color=auto'
