@@ -1,9 +1,17 @@
+# Run fastfetch on startup
+fastfetch
+
+# Zsh tab completions
 autoload -Uz compinit
 setopt PROMPT_SUBST
 compinit
 zstyle ':completion:*' menu select
+
+# Zsh funtionalities
 source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Command history
 HISTFILE=~/.config/zsh/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -15,17 +23,11 @@ setopt HIST_IGNORE_SPACE      # Ignore commands that start with a space
 setopt HIST_FIND_NO_DUPS      # Do not display duplicates in history search
 setopt HIST_REDUCE_BLANKS     # Remove unnecessary blanks before adding to history
 
+# Starship
+eval "$(starship init zsh)"
 
-
-PROMPT='%B%F{033}-[󰣇]- %B%F{003}%n %B%F{026}@ %B%F{045}%m
-%B%F{015}%~ >%b%F{208} '
-
+# Useful aliases
 alias ls='ls -l --color=auto'
 alias ll='ls -la --color=auto'
-alias ff='fastfetch'
 alias py='source ~/myenv/bin/activate'
 
-# ff
-fastfetch
-export PATH="~/github/git:$PATH"
-export PATH="/usr/sbin/python:$PATH"
