@@ -1,1 +1,0 @@
-chromium emote extension-manager gnome-remote-desktop heroic-games-launcher-bin notion-app-enhanced onlyoffice-bin pamac-aur rate-mirrors-bin sanskrit-fonts spotify stremio tecla tipp10 universal-android-debloater-opengl-bin visual-studio-code-bin whatsie wine-wayland xampp
