@@ -62,10 +62,9 @@
             "type": "memory"
         },
         {
-            "key": "• {#36}󰩟 network {#keys}•",
-            "type": "localip",
-            "format": "{ipv4} ({ifname})"
-        },
+            "key": "• {#36}󰊁 battery {#keys}•",
+            "type": "battery"
+        }
         {
             "key": "•••••••••••••",
             "type": "custom"
