@@ -31,3 +31,5 @@ alias ls='ls -l --color=auto'
 alias ll='ls -la --color=auto'
 alias py='source ~/myenv/bin/activate'
 
+# Zoxide
+eval "$(zoxide init zsh)"

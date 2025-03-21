@@ -1,5 +1,3 @@
-require "nvchad.options"
-
 vim.wo.number = true
 vim.wo.rnu = true
 vim.o.clipboard = 'unnamedplus'
