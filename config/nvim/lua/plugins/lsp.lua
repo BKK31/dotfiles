@@ -114,12 +114,6 @@ return {
           },
         },
       },
-      pylsp = {},
-      ast_grep = {},
-      cpptools = {},
-      google_java_format = {},
-      prettier = {},
-      stylua = {},
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})
