@@ -123,15 +123,6 @@ return {
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format Lua code
-      'prettier',
-      'cpptools',
-      'google-java-format',
-     'ast-grep',
-    'lua-language-server',
-    'python-lsp-server',
-    })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     require('mason-lspconfig').setup {
